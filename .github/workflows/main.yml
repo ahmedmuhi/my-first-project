@@ -1,14 +1,14 @@
 name: Hello World
-
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   say-hello:
     runs-on: ubuntu-latest
-
     steps:
       - name: Say hello
         run: echo "Hello, GitHub Actions!"
-
       - name: Tell us the time
         run: date
