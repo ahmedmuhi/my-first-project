@@ -1,8 +1,11 @@
 name: Hello World
+
 on:
   push:
     branches:
       - main
+    paths:
+      - '**.js'
 
 jobs:
   say-hello:
@@ -10,5 +13,6 @@ jobs:
     steps:
       - name: Say hello
         run: echo "Hello, GitHub Actions!"
+
       - name: Tell us the time
         run: date
