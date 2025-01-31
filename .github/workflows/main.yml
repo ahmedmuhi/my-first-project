@@ -1,18 +1,18 @@
-name: Hello World
+name: PR Filter Demo
 
 on:
-  push:
+  pull_request:
     branches:
       - main
     paths:
-      - '**.js'
+      - 'src/**.js'
 
 jobs:
-  say-hello:
+  check-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Say hello
-        run: echo "Hello, GitHub Actions!"
-
-      - name: Tell us the time
-        run: date
+      - name: Check PR details
+        run: |
+          echo "This workflow ran because:"
+          echo "1. A pull request is targeting main"
+          echo "2. JavaScript files in src/ were modified"
